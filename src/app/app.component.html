@@ -1,13 +1,20 @@
 <nav>
   <div class="nav-wrapper black">
-    <a href="/" class="brand-logo">
+    <img class="imagenLogo" src="../assets/imagenes/logoClueFavi.png" />
+    <a href="/" class="brand-logo" id="colorText">
       &nbsp;Clueless
     </a>
-</div>
+    <a class="nav-link right" href="#" routerLink="/register" id="colorText">Registrarse</a>
+    <a class="nav-link right" href="#" routerLink="/login" id="colorText">Iniciar Sesión</a>
+  </div>
 </nav>
 
-<div class="container">
-  <h1>Clueless</h1>
+<div class="container" style="max-width:100% !important">
+  <div class="row">
+    Guarda tus <span id="azul">tareas</span> de
+    <img class="logoInicio" src="../assets/imagenes/logoClue.png" />
+    forma <span id="azul">rápida</span> y <span id="azul">sencilla</span>.
+  </div>
   <app-add-tasks></app-add-tasks>
   <app-tasks></app-tasks>
 </div>

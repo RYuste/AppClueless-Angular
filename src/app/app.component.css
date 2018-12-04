@@ -1,0 +1,33 @@
+nav{
+    font-family: Youth;
+}
+
+.container{
+    margin-top: 5px;
+}
+
+.imagenLogo{
+    width: 30px; height: 50px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+#colorText{
+    color: #00BCD4;
+}
+
+.row{
+    text-align: center;
+    display: block;
+    font-family: Youth;
+    font-size: 25px;
+    color: #ffffff;
+    margin-left: 17px;
+    margin-top: 20px;
+}
+    #azul{
+        color: #00BCD4;
+    }
+
+
+

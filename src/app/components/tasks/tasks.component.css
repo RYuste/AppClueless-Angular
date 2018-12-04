@@ -1,0 +1,43 @@
+.collection-item{
+    font-family: Oswald;
+}
+
+.btn{
+    font-family: Youth;
+}
+
+.btnAct{
+    background-color: #00BCD4;
+}
+.btnAct:hover{
+    background-color: #2274E1;
+}
+
+.btnDlt{
+    background-color: #ff1919;
+}
+.btnDlt:hover{
+    background-color: #cc0000;
+}
+
+strong{
+    color: #00BCD4;
+}
+
+.fa{
+    color: #00BCD4; 
+}
+
+p{
+    text-align: center;
+    font-family: Oswald;
+    color: #ffffff;
+    font-size: 30px;
+}
+    span{
+        color: #00BCD4;
+    }
+
+.noDecoration{
+    text-decoration:none;
+}

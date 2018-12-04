@@ -10,12 +10,14 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { TaskService } from './services/task.service';
 import { FormsModule } from  '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TasksComponent,
-    AddTasksComponent
+    AddTasksComponent,
+    LoginComponent
   ],
   imports: [
     FormsModule,

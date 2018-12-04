@@ -1,32 +1,39 @@
 <div *ngIf="tasks?.length > 0;else noTasks">
   <ul *ngFor="let task of tasks" class="collection">
     <li class="collection-item" (dblclick)="deleteTask($event, task)">
-      <strong>{{ task.fecha }}</strong> : {{ task.descripcion }}
-      <a href="#" class="secondary-content">
+      <a href="#" class="secondary-content noDecoration">
         <i (click)="deleteTask($event, task)" class="fa fa-trash"></i>
         &nbsp;
         <i (click)="editTask($event, task)" class="fa fa-pencil"></i>
       </a>
+      <strong>Fecha: </strong>{{ task.fecha }}<br>
+      <strong>Descripción: </strong>{{ task.descripcion }}
       <div *ngIf="editState && taskToEdit.id === task.id">
+        <br>
         <form (ngSubmit)="updateTask(task)">
           <div class="row">
             <div class="input-field col s6">
+              <label for="fecha">Fecha</label>
+              <br>
               <input type="date" name="fecha" placeholder="Editar Fecha" [(ngModel)]="task.fecha">
             </div>
             <div class="input-field col s6">
+              <label for="fecha">Descripción</label>
+              <br>
               <input type="text" name="descripcion" placeholder="Editar Descripción" [(ngModel)]="task.descripcion">
             </div>
-            <input type="submit" class="btn" value="Actualizar Tarea">
+          </div>
+          <div>
+            <input type="submit" class="btn btnAct" value="Actualizar Tarea">
             &nbsp;
-            <button class="btn red" (click)="deleteTask($event, task)">Eliminar Tarea</button>
+            <button class="btn btnDlt" (click)="deleteTask($event, task)">Eliminar Tarea</button>
           </div>
         </form>
       </div>
-
     </li>
   </ul>
 </div>
 
 <ng-template #noTasks>
-  <p>No hay Tareas creadas.</p>
+  <p>No hay <span>Tareas</span> creadas</p>
 </ng-template>

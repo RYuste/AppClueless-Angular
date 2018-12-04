@@ -1,0 +1,16 @@
+.card-content{
+    font-family: Oswald;
+}
+
+.btn{
+    background-color: #00BCD4;
+    font-family: Youth;
+}
+.btn:hover{
+    background-color: #2274E1;
+}
+
+span{
+    color: #00BCD4;
+    font-family: Youth;
+}

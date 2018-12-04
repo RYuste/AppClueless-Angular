@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from "../../models/task";
 import { TaskService } from "../../services/task.service";
+import { Button } from 'protractor';
 
 @Component({
   selector: 'app-add-tasks',
@@ -21,10 +22,12 @@ export class AddTasksComponent implements OnInit {
   }
 
   onSubmit(){
-    if(this.task.fecha != '' || this.task.descripcion){
+    if(this.task.fecha != '' && this.task.descripcion){
       this.taskService.addTask(this.task);
       this.task.fecha = '';
       this.task.descripcion = '';
+    }else{
+      
     }
   }
   
