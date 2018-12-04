@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">Nueva Tarea</span>
+    <form (ngSubmit)="onSubmit()" class="col s6">
+      <div class="form-group">
+        <label for="fecha">Fecha&nbsp;</label>
+        <input type="date" class="form-control" [(ngModel)]="task.fecha" name="fecha">
+      </div>
+      <div class="form-group">
+        <label for="tarea">Tarea a recordar&nbsp;</label>
+        <input type="text" class="form-control" [(ngModel)]="task.descripcion" name="descripcion">
+      </div>
+      <button type="submit" class="btn btn-primary btnColor">Añadir Tarea</button>
+      &nbsp;
+    </form>
+  </div>
+</div>
