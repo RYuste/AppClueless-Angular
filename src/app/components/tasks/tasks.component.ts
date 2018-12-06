@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../../services/task.service';
 import { Task } from '../../models/task';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-tasks',
@@ -9,15 +10,34 @@ import { Task } from '../../models/task';
 })
 export class TasksComponent implements OnInit {
 
+  taskForm: FormGroup;
   tasks: Task[];
   editState: boolean = false;
   taskToEdit: Task;
+  loading: boolean;
 
-  constructor(public taskService: TaskService) { }
+  constructor(public taskService: TaskService, private formBuilder: FormBuilder) { 
+    this.loading = true;
+  }
 
   ngOnInit() {
     this.taskService.getTasks().subscribe(tasks => {
       this.tasks = tasks;
+      
+      if(this.tasks){
+        this.loading = false;
+      }
+    });
+
+    this.taskForm = this.formBuilder.group({
+      'fecha': ['', [
+        Validators.required,
+      ]
+      ],
+      'descripcion': ['', [
+        Validators.required,
+      ]
+      ]
     });
   }
 

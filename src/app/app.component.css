@@ -1,9 +1,19 @@
-nav{
+nav {
     font-family: Youth;
+    background: #111111 !important;
 }
 
-.container{
-    margin-top: 5px;
+.imagenLogo{
+    width: 30px; height: 50px;
+    margin-bottom: 5px;
+}
+
+.btn{
+    background-color: #00BCD4;
+    font-family: Youth;
+}
+.btn:hover{
+    background-color: #2274E1;
 }
 
 .imagenLogo{
@@ -28,6 +38,9 @@ nav{
     #azul{
         color: #00BCD4;
     }
+
+
+
 
 
 

@@ -1,3 +1,10 @@
+.card{
+    width: 80%;
+    align-content: auto;
+    margin: auto;
+    display: block;
+}
+
 .card-content{
     font-family: Oswald;
 }
@@ -13,4 +20,5 @@
 span{
     color: #00BCD4;
     font-family: Youth;
+    font-size: 30px;
 }

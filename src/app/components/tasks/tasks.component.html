@@ -1,4 +1,8 @@
-<div *ngIf="tasks?.length > 0;else noTasks">
+<div class="loading" *ngIf="loading">
+  <img src="../../../assets/imagenes/loading.gif"/>
+</div>
+
+<div *ngIf="tasks">
   <ul *ngFor="let task of tasks" class="collection">
     <li class="collection-item" (dblclick)="deleteTask($event, task)">
       <a href="#" class="secondary-content noDecoration">
@@ -10,21 +14,21 @@
       <strong>Descripción: </strong>{{ task.descripcion }}
       <div *ngIf="editState && taskToEdit.id === task.id">
         <br>
-        <form (ngSubmit)="updateTask(task)">
+        <form [formGroup]="taskForm" (ngSubmit)="updateTask(task)">
           <div class="row">
             <div class="input-field col s6">
               <label for="fecha">Fecha</label>
               <br>
-              <input type="date" name="fecha" placeholder="Editar Fecha" [(ngModel)]="task.fecha">
+              <input type="date" formControlName="fecha" [(ngModel)]="task.fecha" >
             </div>
             <div class="input-field col s6">
               <label for="fecha">Descripción</label>
               <br>
-              <input type="text" name="descripcion" placeholder="Editar Descripción" [(ngModel)]="task.descripcion">
+              <input type="text" formControlName="descripcion" [(ngModel)]="task.descripcion">
             </div>
           </div>
           <div>
-            <input type="submit" class="btn btnAct" value="Actualizar Tarea">
+            <input type="submit" class="btn btnAct" [disabled]="!taskForm.valid" value="Actualizar Tarea">
             &nbsp;
             <button class="btn btnDlt" (click)="deleteTask($event, task)">Eliminar Tarea</button>
           </div>
@@ -33,7 +37,3 @@
     </li>
   </ul>
 </div>
-
-<ng-template #noTasks>
-  <p>No hay <span>Tareas</span> creadas</p>
-</ng-template>
